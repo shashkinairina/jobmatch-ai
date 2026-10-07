@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobMatch AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0f0f23;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1 { font-size: 32px; text-align: center; margin-bottom: 8px; }
+        .subtitle { text-align: center; color: #888; margin-bottom: 30px; font-size: 15px; }
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            background: #1a1a2e;
+            border: 1px solid #2d2d3f;
+            border-radius: 12px;
+            padding: 16px;
+            color: #fff;
+            font-size: 15px;
+            resize: vertical;
+            outline: none;
+        }
+        textarea:focus { border-color: #4ecdc4; }
+        .btn-group { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-primary { background: #4ecdc4; color: #0f0f23; font-weight: 600; }
+        .btn-primary:hover { background: #38b2ac; }
+        .btn-secondary { background: #2d2d3f; color: #a4a4b4; }
+        .btn-secondary:hover { background: #3d3d5f; color: #fff; }
+        #results { margin-top: 30px; }
+        .hint { color: #666; font-size: 13px; margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JobMatch AI</h1>
+        <p class="subtitle">Опишите ваш опыт — подберём подходящие вакансии</p>
+        
+        <textarea id="user-input" placeholder="Например: работаю аналитиком данных, пишу на Python и SQL, делаю дашборды в Tableau, провожу A/B тесты..."></textarea>
+        
+        <div class="btn-group">
+            <button class="btn-primary" id="match-btn">Подобрать вакансии</button>
+            <button class="btn-secondary" id="demo-btn">Демо-режим</button>
+        </div>
+        <p class="hint">Чем подробнее опишете навыки и инструменты — тем точнее подбор</p>
+        
+        <div id="results"></div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
